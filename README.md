@@ -2,7 +2,7 @@
 
 Este repositório foi desenvolvido com o objetivo de apresentar meu **portfólio profissional**, reunindo informações sobre minha trajetória, experiências e projetos realizados na área de tecnologia.
 
-- [Site do Portifólio]()
+- [Site do Portifólio](https://lucasteixeira03.github.io/Portifolio-LucasTeixeira/)
 
 ## Sobre o Projeto  
 Este projeto tem como finalidade **construir um portfólio/currículo digital**, proporcionando uma forma moderna e interativa de compartilhar minhas habilidades, conhecimentos e trabalhos realizados.  
@@ -25,7 +25,7 @@ A página foi desenvolvida utilizando **tecnologias front-end**, com foco em um 
 Clone o projeto
 
 ```bash
-  git clone 
+  git clone https://github.com/lucasteixeira03/Portifolio-LucasTeixeira.git
 ```
 
 ## Minhas Redes Sociais
