@@ -32,4 +32,4 @@ Clone o projeto
 
 - [GitHub](https://github.com/lucasteixeira03)
 - [Instagram](https://www.instagram.com/texera.ds/)
-- [Linkedlin](https://www.linkedin.com/in/lucas-teixeira-766a7a267)
+- [Linkedln](https://www.linkedin.com/in/lucas-teixeira-766a7a267)
