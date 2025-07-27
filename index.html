@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Portifolio-LucasTeixeira</title>
 </head>
 
 <body>
+    <div class="particulas"></div>
+
     <nav class="navegacao">
         <ul class="menu">
             <li>
@@ -21,7 +24,7 @@
                 <a href="#projetos" class="menu-link">Projetos</a>
             </li>
             <li>
-                <a href="#contato" class="menu-link">Contato</a>
+                <a href="#contatos" class="menu-link">Contato</a>
             </li>
         </ul>
     </nav>
@@ -30,54 +33,105 @@
         <img src="./img/lucas4.jpg" alt="Foto de Lucas Teixeira" class="foto-perfil">
         <h1>Lucas Teixeira</h1>
         <p class="cabecalho-sub-titulo">Desenvolvedor Back-End</p>
+        <div class="icones-sociais">
+            <a href="https://www.linkedin.com/in/lucas-teixeira-766a7a267" target="_blank" class="icone-link">
+                <span class="iconify" data-icon="mdi:linkedin" data-width="40" data-height="40"></span>
+            </a>
+            <a href="https://github.com/lucasteixeira03" target="_blank" class="icone-link">
+                <span class="iconify" data-icon="mdi:github" data-width="40" data-height="40"></span>
+            </a>
+            <button class="button" id="downloadButton"> Download CV </button>
+        </div>
+
     </main>
 
     <section id="sobre" class="sobre">
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
-                Sou um desenvolvedor back-end apaixonado por criar soluções eficientes e escaláveis. Tenho experiência
-                em diversas tecnologias e estou sempre em busca de novos desafios.
+                Olá, me chamo Lucas De Sousa Teixeira, tenho 21 anos e sou da cidade de Tapejara, no estado do Rio
+                Grande do Sul. Atualmente, estou cursando Ciência da Computação na universidade do IFSUL - Campus Passo
+                fundo.
             </p>
         </div>
     </section>
 
     <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Projetos</h2>
+        <h2 class="projetos-titulo">Meus Projetos</h2>
         <div class="projetos-caixa">
 
             <div class="projetos-card">
                 <img src="./img/curriculo_projeto.jpeg" alt="Projeto 1" class="projetos-imagem">
-                <h3 class="inf-projetos">Meu primeiro curriculo</h3>
-                <p class="paragrafo-projetos">Curriculo realizado como um trabalho para a faculdade</p>
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Meu primeiro curriculo</h3>
+                    <p class="paragrafo-projetos">Curriculo fictício realizado como um projeto para a faculdade </p>
+                </div>
             </div>
 
             <div class="projetos-card">
                 <img src="./img/compass_projeto.png" alt="Projeto 2" class="projetos-imagem">
-                <h3 class="inf-projetos">Teste Automatizado em APIs</h3>
-                <p class="paragrafo-projetos">Projeto voltado a testes automatizados em APIs</p>
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Teste Automatizado em APIs</h3>
+                    <p class="paragrafo-projetos">Projeto voltado a testes automatizados em APIs, realizado no programa
+                        de bolsas da Compass UOL</p>
+                </div>
             </div>
 
             <div class="projetos-card">
                 <img src="./img/em-construcao.png" alt="Projeto 3" class="projetos-imagem">
-                <h3 class="inf-projetos">Em construção...</h3>
-                <p class="paragrafo-projetos">Espaço que sera ocupado para proximo projeto a ser desenvolvido</p>
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Em construção...</h3>
+                    <p class="paragrafo-projetos">Em andamento...</p>
+                </div>
             </div>
 
         </div>
     </section>
 
     <section id="contatos" class="contatos">
-        <h2 class="contato-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario">
+        <h2 class="contato-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input placeholder="Nome" class="campo-form" id="nome" name="nome" required>
             </div>
             <div class="grupo-form">
-                <textarea placeholder="Digite sua Mensagem" class="text-form"></textarea>
+                <textarea placeholder="Digite sua Mensagem" rows="6" class="campo-form" id="mensagem" name="mensagem"
+                    required></textarea>
             </div>
+
+            <button type="submit" class="botao-form">Enviar via WhatsApp</button>
         </form>
     </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const mensagem = document.getElementById('mensagem').value.trim();
+            const telefone = '5554999402612';
+
+            if (!nome || !mensagem) {
+                alert('Preencha nome e mensagem.');
+                return;
+            }
+
+            const texto = `Olá, meu nome é ${nome} e minha mensagem é: ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            window.open(url, '_blank');
+        }
+
+        // DOWNLOAD CV 
+        document.getElementById("downloadButton").addEventListener("click", function () {
+            // URL do currículo
+            var cvUrl = "cv/Curriculo.pdf";
+
+            // Abre o currículo em uma nova janela e força o download
+            window.open(cvUrl, "_blank").focus();
+        });
+    </script>
 
 </body>
 
