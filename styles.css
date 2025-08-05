@@ -10,11 +10,11 @@ html {
 }
 
 :root {
-    --primaria: #4f46e5;
-    --secundaria: #7c3aed;
-    --escuro: #0f172a;
-    --maisEscuro: #0a0f1c;
-    --claro: #e2e8f0;
+    --primaria: #3b82f6;        
+    --secundaria: #2563eb;      
+    --escuro: #0c1a2b;          
+    --maisEscuro: #091522;      
+    --claro: #e0f2fe;           
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
@@ -63,7 +63,7 @@ body {
 }
 
 .cabecalho {
-    min-height: 70vh;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -141,7 +141,7 @@ h1 {
 }
 
 .projetos-card:hover {
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
     transform: translateY(-10px) scale(1.03);
 }
 
@@ -162,7 +162,7 @@ h1 {
 }
 
 .paragrafo-projetos {
-    color: rgba(226, 232, 240, 0.8);
+    color: rgba(224, 242, 254, 0.8);
     line-height: 1.25rem;
 }
 
@@ -203,7 +203,7 @@ h1 {
 
 .campo-form:focus {
     border-color: var(--secundaria);
-    box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 
 .grupo-form {
@@ -224,7 +224,7 @@ h1 {
 
 .botao-form:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
 }
 
 .particulas {
@@ -238,7 +238,7 @@ h1 {
     background:
         radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 30%),
         radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 30%),
-        var(--maisEscuro)
+        var(--maisEscuro);
 }
 
 @keyframes flutuar {
@@ -248,7 +248,6 @@ h1 {
     50% {
         transform: translateY(-20px);
     }
-
 }
 
 .icones-sociais {
@@ -283,7 +282,5 @@ h1 {
 
 .button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
 }
-
-
