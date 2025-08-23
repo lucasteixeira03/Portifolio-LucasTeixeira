@@ -10,11 +10,11 @@ html {
 }
 
 :root {
-    --primaria: #3b82f6;        
-    --secundaria: #2563eb;      
-    --escuro: #0c1a2b;          
-    --maisEscuro: #091522;      
-    --claro: #e0f2fe;           
+    --primaria: #3b82f6;
+    --secundaria: #2563eb;
+    --escuro: #0c1a2b;
+    --maisEscuro: #091522;
+    --claro: #e0f2fe;
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
@@ -242,9 +242,12 @@ h1 {
 }
 
 @keyframes flutuar {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -268,7 +271,6 @@ h1 {
     color: var(--primaria);
 }
 
-/* Botão de Download CV */
 .button {
     padding: 0.7rem 1.5rem;
     background: linear-gradient(45deg, var(--primaria), var(--secundaria));
@@ -283,4 +285,68 @@ h1 {
 .button:hover {
     transform: translateY(-4px);
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.skills {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.skills-titulo {
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+    color: var(--claro);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+    padding: 2rem 1rem;
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px) scale(1.1) rotate(3deg);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--primaria);
+    margin-bottom: 0.8rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    color: var(--secundaria);
+}
+
+.skill-card p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--claro);
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas tablet*/
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 coluna celular */
+    }
 }
